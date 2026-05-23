@@ -4,3 +4,5 @@ resume/*.aux
 /resume/*.log
 /resume/*.out
 /resume/*.synctex.gz
+
+**/node_modules
