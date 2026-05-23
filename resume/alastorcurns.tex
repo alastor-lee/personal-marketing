@@ -1,0 +1,286 @@
+%------------------------
+% Alastor Curns Resume
+% Written in LateX
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+% \usepackage[OT1]{fontenc}
+
+% \usepackage{pandora}
+% \usepackage[T1]{fontenc}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+% \usepackage{fontspec}
+\usepackage[margin=.5in,top=.3in,bottom=.3in,nohead]{geometry}
+%\usepackage[margin=1in]{geometry}
+\usepackage{latexsym}
+%\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage{changepage}
+\usepackage{textcomp}
+\input{glyphtounicode}
+
+%\linespread{.5}
+
+\setlength{\footskip}{4.08003pt}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.75in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength\parindent{10pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-12pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Commands
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% tilde
+\newcommand{\mytexttilde}{\raisebox{0.5ex}{\texttildelow}}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeBigHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\normalsize#3} & \textit{\normalsize#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.08in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeJobBlockStart}{\item\begin{adjustwidth}{.5em}{0em}}
+\newcommand{\resumeJobBlockEnd}{\end{adjustwidth}}
+\newcommand{\resumeTextBlock}[1]{\small {#1 \vspace{-1pt}}}
+
+\newcommand{\test}{\begin{tabular}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\newcommand{\resumeItem}[1]{
+    \item\normalsize{
+       {#1 \vspace{0pt}}
+    }
+}
+
+\newcommand{\resumeHeading}[2]{
+    \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubheading}[2]{
+  \vspace{-5pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingWithFootnote}[4]{
+  \vspace{-5pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \vspace{0pt} \\
+      \textit{\small#3} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\newcommand{\boldSubjectWithDesc}[2]{
+  \normalsize{\textbf{#1}{: #2 \vspace{-2pt}}}
+}
+
+\newcommand{\boldSubjectColonWithDesc}[2]{
+  \normalsize{\textbf{#1}{: #2 \vspace{-2pt}}}
+}
+
+% ----------------------------
+
+\begin{document}
+% ------------------ HEADER
+\begin{center}
+  \textbf{\Huge Alastor Curns} \\ \vspace{2pt}
+  \faMobile \hspace{.5pt} \href{tel:16786285085}{678-628-5085}
+  $|$
+  \href{mailto:alastor.cu@gmail.com}{alastor.cu@gmail.com}
+  $|$
+  \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/alastorc}{LinkedIn}
+  $|$
+  \faGithub \hspace{.5pt} \href{https://github.com/alastor-lee}{GitHub}
+  $|$
+  \faShield \hspace{.5pt} Secret
+  $|$
+  \faGlobe \hspace{.5pt} \href{https://maps.app.goo.gl/CdQMUuxD24zfLjYq7}{Oakland, CA}
+  $|$
+  \faHistory \hspace{.5pt} 9 Years
+\end{center}
+
+%--------- Introduction ---------
+\section{Introduction}
+\resumeSubHeadingListStart
+\item{
+            Engineering leader of a team of 5, with over 9 years of experience in a range of engineering roles, from junior to lead to architect.
+            I spent my initial years in tech developing for various internal projects and traveling to understand customer needs of our platform.
+            In 2020, I pivoted to building the new core products of the company in an attempt to modernize. 
+            I expanded into new languages and architectures while improving my communication, mentorship, leadership skills.
+            I currently work closely with my engineering team to build the product while bridging gaps between design, product, sales, and engineering.
+            My focus has always been on practical, pragmatic software solutions.
+      }
+\resumeSubHeadingListEnd
+%--------- Experience -------------
+\section{Experience}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\resumeHeading{\normalsize{CodeMettle}}{\normalsize{Atlanta, GA}}
+\resumeSubheading{Engineering Manager}{2025 - Present}
+\resumeItemListStart
+\resumeItem{
+  \boldSubjectWithDesc{Responsibility}{
+    Take on a heightened role to better influence leadership on engineering decisions and advocate for engineers.
+    Balance technical leadership with people development and product decisions.
+  }
+}
+\resumeItem{
+  \boldSubjectWithDesc{AI}{
+    Learn and teach appropriate use of AI tools like Claude Code, emphasizing interrogation, iteration, and a test-driven style of development.
+    Build on skills and MCP servers to improve DevEx.
+  }
+}
+\resumeItemListEnd
+\resumeSubheading{Lead Software Engineer}{2020 - Present}
+\resumeItemListStart
+\resumeItem{
+  \boldSubjectWithDesc{Lead}{
+    Commit high-quality systems and code while working with the engineering teams towards similar goals.
+    Coordinate across engineering and product to design and implement the roadmap and architecture.
+  }
+}
+\resumeItem{
+  \boldSubjectWithDesc{Develop}{
+    Worked primarily in a Node.js stack (front and backend) with an emphasis on immutability.
+    Maintained a Scala/Java polling service.
+    Experience using and building complex graphing data structures, concurrent thread management, and good pattern design.
+  }
+}
+\resumeItem{
+  \boldSubjectWithDesc{Mentor}{
+    Continuously provide feedback and resources like onboarding documentation to new engineers.
+  }
+}
+\resumeItemListEnd
+\resumeSubheading{Systems Engineer}{2017-2020}
+\resumeItemListStart
+\resumeItem{
+  \boldSubjectWithDesc{Fullstack Environment}{
+    Adapted to novel responsbilities and short deadlines by learning to create and write improved services, backend business logic, APIs, and visualizations in different stacks.
+    Leveraged an understanding of the products and pipelines to bridge the gap between product, design, integrators and end-users.
+  }
+}
+\resumeItem{
+  \boldSubjectWithDesc{Travel (\mytexttilde30\%)}{
+    Visited global customer sites to prototype, demonstrate features, and communicate as the engineering subject matter expert.
+  }
+}
+\resumeItemListEnd
+\resumeSubheading{Project Engineer}{August 2016-2017}
+\resumeItemListStart
+\resumeItem{
+  \boldSubjectWithDesc{Project Lead}{Deployed production ready systems to customers while leading a small teams of developers.}
+}
+\resumeItem{
+  \boldSubjectWithDesc{Hardware Integration}{Translated live data from satellite infrastructure into well-defined databases, using Python.}
+}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-------- Projects --------------
+\section{Projects}
+\resumeSubHeadingListStart
+\item{
+            \boldSubjectWithDesc{Polling Backend}{
+              Architected asynchronous subprocesses in a Node backend to manage high loads of incoming device data via various protocols (ssh, snmp, http, streaming, serial, tcp, udp, and websocket.)
+            }
+
+            \boldSubjectWithDesc{Flows}{Developed a domain specific language and event driven architecture to allow users to define secure polls, data transformation/validation, and rules.}
+
+            \boldSubjectWithDesc{Data Visualizations}{
+              Led teams across products to develop geographical and logical graphs with D3, MapBox, cytoscape.js, and reactflow. Wrote datasource plugins for Grafana to hook into Apache Solr and MongoDB.
+            }
+
+            \boldSubjectWithDesc{Network Infrastructure}{Created and maintained iOS and Juniper configurations. Built scripts and automations to help manage a network stack for the office. Helped developers and QA setup testing scenarios.}
+
+            \boldSubjectWithDesc{FIPS}{Integrated OpenSSL and BouncyCastle into Node and Java applications for FIPS compliance.}
+      }
+\resumeSubHeadingListEnd
+
+%-------- Skills --------------
+\section{Skills}
+\resumeSubHeadingListStart
+\item{
+            \boldSubjectWithDesc{Languages \& Libraries}{TypeScript, Python, Java, Bash, C, HTML/CSS/JS, \href{https://github.com/Effect-TS/effect}{Effect-TS}, Express, Vite, Gulp}
+
+            \boldSubjectWithDesc{Technologies \& Frameworks}{Node.js, React, Jest, SNMP, Linux, OpenAPI, REST, MongoDB, MUI, Docker, Electron}
+
+            \boldSubjectWithDesc{Methods}{Git, Neovim, Agile, OOP, Functional, Immutable, CI/CD, Claude Code, Snyk, Trivy, Obsidian, Monorepo}
+      }
+\resumeSubHeadingListEnd
+
+%----------- EDUCATION -----------
+\section{Education}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\resumeSubheadingWithFootnote
+{Georgia State University}{Atlanta, GA}
+{Bachelor of Science in Computer Science; Dean's List; GPA: 3.43}{Graduated May 2015}
+\resumeSubHeadingListEnd
+
+\end{document}
