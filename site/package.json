@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch",
+    "server": "npx http-server . -p 8081"
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "http-server": "^14.1.1",

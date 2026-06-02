@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="./output.css" rel="stylesheet">
-  </head>
-  <body class="bg-[#0A0033]">
-    <div class="grid-flow-col justify-items-center mx-auto mx-w-sm gap-x-4 p-3 rounded-xl">
-      <div class="justify-items-center">
-        <img class="shrink-0" src="./imgs/headshot.svg"/>
-        <p class="text-amber-200 font-mono text-3xl">Alastor Curns</p>
-      </div>
+
+<head>
+  <link href="./output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-900">
+  <div class="grid-flow-col justify-items-center mx-auto mx-w-sm gap-x-4 p-3 rounded-xl">
+    <div class="justify-items-center">
+      <img class="shrink-0" src="./imgs/headshot.svg" />
+      <p class="text-amber-200 font-mono text-3xl">Alastor Curns</p>
     </div>
-    <div class="bg-indigo-950 grid grid-flow-col justify-items-center p-4 rounded-xl">
-      <button class="text-amber-200 font-mono">BIO</button>
-      <button class="text-amber-200 font-mono">RESUMÉ</button>
-      <button class="text-amber-200 font-mono">PHOTOS</button>
-      <button class="text-amber-200 font-mono">BLOG</button>
+  </div>
+  <div
+    class="bg-gray-950 grid grid-flow-col justify-items-center p-4 border-t-2 border-b-2 border-amber-100 shadow-blue-950 shadow-xl">
+    <div></div>
+    <button class="w-full h-full text-amber-200 font-mono hover:bg-amber-950"
+      onclick="document.location='#Bio'">Bio</button>
+    <button class="w-full h-full text-amber-200 font-mono hover:bg-amber-950"
+      onclick="document.location='resume.html'">Resumé</button>
+    <button class="w-full h-full text-amber-200 font-mono hover:bg-amber-950"
+      onclick="document.location='https://www.linkedin.com/in/alastorc/'">LinkedIn</button>
+    <button class="w-full h-full text-amber-200 font-mono hover:bg-amber-950"
+      onclick="document.location='https://github.com/alastor-lee'">GitHub</button>
+    <div class=""></div>
+  </div>
+  <div id="Bio" class="mt-15 m-10">
+    <div class="p-20 bg-black/20 rounded-sm">
+      <h1 class="text-amber-200 text-xl">Career</h2>
+        <p class="text-amber-50">
+          Fullstack software developer with over 9 years in the field.
+        </p>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
