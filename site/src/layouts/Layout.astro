@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  wide?: boolean;
+}
+
+const {
+  title = 'Alastor Curns',
+  description = 'Fullstack software developer with over 9 years in the field.',
+  wide = false,
+} = Astro.props;
+
+const fullTitle = title === 'Alastor Curns' ? title : `${title} — Alastor Curns`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Nav />
+    <main class:list={['mx-auto w-full flex-1 px-4 py-10', wide ? 'max-w-6xl' : 'max-w-4xl']}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

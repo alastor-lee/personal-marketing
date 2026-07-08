@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pdf = '/alastorcurns.pdf';
+---
+
+<Layout title="Resumé" description="Alastor Curns — résumé / CV." wide>
+  <section>
+    <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+      <h1 class="font-mono text-3xl font-semibold text-accent-soft">Resumé</h1>
+      <a
+        href={pdf}
+        download
+        class="inline-flex items-center gap-2 rounded-md border border-accent/40 bg-accent-dim/30 px-3 py-1.5 font-mono text-sm text-accent-soft transition-colors hover:bg-accent-dim/60"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path d="M12 3v12" />
+          <path d="m7 10 5 5 5-5" />
+          <path d="M5 21h14" />
+        </svg>
+        Download PDF
+      </a>
+    </div>
+
+    <!-- Inline preview on wider screens; mobile browsers handle embedded PDFs
+         poorly, so there we lean on the download link above. -->
+    <div class="mt-6 hidden overflow-hidden rounded-lg border border-border md:block">
+      <object data={pdf} type="application/pdf" class="h-[130vh] w-full" title="Resumé">
+        <p class="p-6 text-muted">
+          Your browser can’t display the embedded PDF.
+          <a href={pdf} download class="text-accent-soft underline">Download it instead.</a>
+        </p>
+      </object>
+    </div>
+
+    <p class="mt-6 text-muted md:hidden">
+      Tap <span class="text-accent-soft">Download PDF</span> above to view the full resumé.
+    </p>
+  </section>
+</Layout>

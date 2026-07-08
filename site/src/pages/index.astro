@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import headshot from '../images/headshot.jpg';
+---
+
+<Layout>
+  <section class="flex flex-col items-center text-center">
+    <Image
+      src={headshot}
+      alt="Alastor Curns"
+      width={576}
+      height={576}
+      class="h-56 w-56 rounded-full sm:h-72 sm:w-72"
+    />
+    <h1 class="mt-8 font-mono text-4xl font-semibold text-accent-soft sm:text-5xl">
+      Alastor Curns
+    </h1>
+    <p class="mt-4 max-w-xl text-lg text-muted">
+      Fullstack software developer with over 9 years in the field.
+    </p>
+  </section>
+</Layout>

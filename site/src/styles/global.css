@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Self-hosted variable fonts (no CDN, no privacy leak). */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* Design tokens — single source of truth for the dark identity.
+   Tailwind v4 exposes these as utilities: bg-bg, text-accent, font-mono, etc. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0a0e1a;          /* page background — very dark navy */
+  --color-surface: #121828;     /* raised panels / nav */
+  --color-border: #26304a;      /* hairline borders — navy tint */
+
+  --color-accent: #fcd34d;      /* amber-300 — primary accent */
+  --color-accent-soft: #fde68a; /* amber-200 — headings/name */
+  --color-accent-dim: #78350f;  /* amber-900 — hover wash */
+
+  --color-fg: #f4f4f5;          /* body text */
+  --color-muted: #a1a1aa;       /* secondary text */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Always reserve scrollbar space so the centered nav doesn't shift
+       when navigating between tall (scrollbar) and short (no scrollbar) pages. */
+    scrollbar-gutter: stable;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}

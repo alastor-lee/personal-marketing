@@ -1,0 +1,42 @@
+[
+  {
+    "id": "polling-backend",
+    "name": "Polling Backend",
+    "context": "CodeMettle",
+    "order": 1,
+    "blurb": "Architected the asynchronous subprocess system at the core of a network-monitoring platform, managing high volumes of incoming device data across a wide range of protocols. Designed for backpressure, fault isolation, and concurrent load without blocking the main event loop.",
+    "tech": ["Node.js", "TypeScript", "SNMP", "SSH", "WebSocket", "TCP/UDP", "Serial"]
+  },
+  {
+    "id": "flows",
+    "name": "Flows",
+    "context": "CodeMettle",
+    "order": 2,
+    "blurb": "Built a domain-specific language and event-driven runtime that lets users declaratively define secure polls, data transformation and validation pipelines, and rule-based automation — turning what used to be bespoke code into configurable building blocks.",
+    "tech": ["TypeScript", "Effect-TS", "Event-Driven", "DSL"]
+  },
+  {
+    "id": "data-visualizations",
+    "name": "Data Visualizations",
+    "context": "CodeMettle",
+    "order": 3,
+    "blurb": "Led teams across products to build geographical and logical network graphs, and authored custom Grafana datasource plugins to surface backend data. Emphasis on rendering large, dynamic topologies performantly.",
+    "tech": ["D3", "React Flow", "cytoscape.js", "MapBox", "Grafana", "Apache Solr", "MongoDB"]
+  },
+  {
+    "id": "network-infrastructure",
+    "name": "Network Infrastructure",
+    "context": "CodeMettle",
+    "order": 4,
+    "blurb": "Created and maintained iOS and Juniper configurations and built the scripts and automations that manage the office network stack, including tooling to help developers and QA stand up realistic testing scenarios.",
+    "tech": ["Bash", "Linux", "Juniper", "Networking"]
+  },
+  {
+    "id": "fips",
+    "name": "FIPS Compliance",
+    "context": "CodeMettle",
+    "order": 5,
+    "blurb": "Integrated OpenSSL and BouncyCastle into Node.js and Java applications to meet FIPS 140 cryptographic-compliance requirements for government-adjacent deployments.",
+    "tech": ["Node.js", "Java", "OpenSSL", "BouncyCastle"]
+  }
+]
