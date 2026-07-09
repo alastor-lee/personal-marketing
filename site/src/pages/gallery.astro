@@ -14,12 +14,14 @@ const photos = await Promise.all(
     const orig = entry.data.src;
     const largeW = Math.min(2000, orig.width);
     const largeH = Math.round((orig.height * largeW) / orig.width);
-    const [thumb, large] = await Promise.all([
+    const [thumbAvif, thumbWebp, large] = await Promise.all([
+      getImage({ src: orig, width: 800, format: 'avif' }),
       getImage({ src: orig, width: 800, format: 'webp' }),
       getImage({ src: orig, width: largeW, format: 'webp' }),
     ]);
     return {
-      thumb: thumb.src,
+      thumbAvif: thumbAvif.src,
+      thumbWebp: thumbWebp.src,
       large: large.src,
       w: largeW,
       h: largeH,
@@ -49,7 +51,10 @@ const photos = await Promise.all(
           rel="noreferrer"
           class="mb-4 block break-inside-avoid overflow-hidden rounded-lg border border-border transition-opacity hover:opacity-90"
         >
-          <img src={photo.thumb} alt={photo.alt} loading="lazy" class="w-full" />
+          <picture>
+            <source srcset={photo.thumbAvif} type="image/avif" />
+            <img src={photo.thumbWebp} alt={photo.alt} loading="lazy" class="w-full" />
+          </picture>
           {photo.caption && <span class="pswp-caption-content" hidden set:html={photo.caption} />}
         </a>
       ))

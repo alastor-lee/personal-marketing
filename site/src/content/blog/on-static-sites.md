@@ -3,6 +3,7 @@ title: "In praise of boring static sites"
 date: 2026-06-20
 description: "Why a pile of pre-built HTML files is still a great way to ship a personal site."
 tags: ["web"]
+draft: true
 ---
 
 There's a lot to be said for a website that is just **files**. No database, no server

@@ -6,3 +6,8 @@
 /resume/*.synctex.gz
 
 **/node_modules
+
+# local agent tooling (not part of the site)
+/.agents/
+/.serena/
+/skills-lock.json

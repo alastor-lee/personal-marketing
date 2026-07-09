@@ -33,7 +33,7 @@
   },
   {
     "id": "fips",
-    "name": "FIPS Compliance",
+    "name": "FIPS 140-2 Compliance",
     "context": "CodeMettle",
     "order": 5,
     "blurb": "Integrated OpenSSL and BouncyCastle into Node.js and Java applications to meet FIPS 140 cryptographic-compliance requirements for government-adjacent deployments.",

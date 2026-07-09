@@ -1,5 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="7" fill="#0a0e1a"/>
-  <text x="16" y="22" font-family="ui-monospace, monospace" font-size="15" font-weight="700"
-        text-anchor="middle" fill="#fcd34d">AC</text>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <!-- scallop shell body -->
+    <path
+      d="M16 26.5
+         C 11 24 6.6 19.4 5.2 13.2
+         Q 7.4 8 9.6 11.6
+         Q 11.8 8 14 11.6
+         Q 16 7.4 18 11.6
+         Q 20.2 8 22.4 11.6
+         Q 24.6 8 26.8 13
+         C 25.4 19.4 21 24 16 26.5 Z"
+      fill="#2e9bff" stroke="#1877e0" stroke-width="0.8" />
+    <!-- radiating ribs -->
+    <g stroke="#155fb0" stroke-width="1" fill="none">
+      <path d="M16 25.5 L 8.2 12.6" />
+      <path d="M16 25.5 L 12 10.8" />
+      <path d="M16 25.5 L 16 9.8" />
+      <path d="M16 25.5 L 20 10.8" />
+      <path d="M16 25.5 L 23.8 12.6" />
+    </g>
+  </g>
 </svg>
