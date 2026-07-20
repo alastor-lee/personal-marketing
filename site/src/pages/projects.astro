@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Layout
+  title="Projects"
+  description="Selected engineering work by Alastor Curns, expanded from the resume."
+>
+  <header>
+    <h1 class="font-mono text-3xl font-semibold text-accent-soft">Projects</h1>
+    <p class="mt-4 max-w-2xl text-muted">
+      A selection of work from my professional experience. Most of this lives inside a
+      commercial product, and therefore is not publicly visible.
+      These items summarize my 10 years of experience with brief accounts of what each 
+      project does and how it was built.
+    </p>
+  </header>
+
+  <ul class="mt-10 flex flex-col gap-10">
+    {
+      projects.map((project) => (
+        <li class="rounded-lg border border-border bg-surface/40 p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h2 class="font-mono text-xl text-accent-soft">
+              {project.data.link ? (
+                <a
+                  href={project.data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="transition-colors hover:underline"
+                >
+                  {project.data.name}
+                </a>
+              ) : (
+                project.data.name
+              )}
+            </h2>
+            {project.data.context && (
+              <span class="font-mono text-sm text-muted">{project.data.context}</span>
+            )}
+          </div>
+
+          <p class="mt-3 text-fg/90">{project.data.blurb}</p>
+
+          {project.data.tech.length > 0 && (
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {project.data.tech.map((tech) => (
+                <li class="rounded border border-border px-2 py-0.5 font-mono text-xs text-muted">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

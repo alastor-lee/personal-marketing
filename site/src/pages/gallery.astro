@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+
+const entries = (await getCollection('gallery')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+// Build two optimized sizes per photo: a grid thumbnail and a larger
+// lightbox image. PhotoSwipe needs the lightbox image's real dimensions.
+const photos = await Promise.all(
+  entries.map(async (entry) => {
+    const orig = entry.data.src;
+    const largeW = Math.min(2000, orig.width);
+    const largeH = Math.round((orig.height * largeW) / orig.width);
+    const [thumbAvif, thumbWebp, large] = await Promise.all([
+      getImage({ src: orig, width: 800, format: 'avif' }),
+      getImage({ src: orig, width: 800, format: 'webp' }),
+      getImage({ src: orig, width: largeW, format: 'webp' }),
+    ]);
+    return {
+      thumbAvif: thumbAvif.src,
+      thumbWebp: thumbWebp.src,
+      large: large.src,
+      w: largeW,
+      h: largeH,
+      alt: entry.data.alt,
+      caption: entry.data.caption ?? '',
+    };
+  }),
+);
+---
+
+<Layout title="Gallery" description="Photography by Alastor Curns.">
+  <header>
+    <h1 class="font-mono text-3xl font-semibold text-accent-soft">Gallery</h1>
+    <p class="mt-4 max-w-2xl text-muted">A few photos. Click any image to view it full-size.</p>
+  </header>
+
+  {photos.length === 0 && <p class="mt-8 text-muted">No photos yet.</p>}
+
+  <div id="gallery" class="mt-10 columns-2 gap-4 md:columns-3">
+    {
+      photos.map((photo) => (
+        <a
+          href={photo.large}
+          data-pswp-width={photo.w}
+          data-pswp-height={photo.h}
+          target="_blank"
+          rel="noreferrer"
+          class="mb-4 block break-inside-avoid overflow-hidden rounded-lg border border-border transition-opacity hover:opacity-90"
+        >
+          <picture>
+            <source srcset={photo.thumbAvif} type="image/avif" />
+            <img src={photo.thumbWebp} alt={photo.alt} loading="lazy" class="w-full" />
+          </picture>
+          {photo.caption && <span class="pswp-caption-content" hidden set:html={photo.caption} />}
+        </a>
+      ))
+    }
+  </div>
+</Layout>
+
+<style is:global>
+  .pswp__custom-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: rgba(10, 14, 26, 0.75);
+    color: #f4f4f5;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .pswp__custom-caption:empty {
+    display: none;
+  }
+</style>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+  });
+
+  // Pull each photo's hidden caption into a PhotoSwipe overlay element.
+  lightbox.on('uiRegister', () => {
+    lightbox.pswp?.ui?.registerElement({
+      name: 'custom-caption',
+      order: 9,
+      isButton: false,
+      appendTo: 'root',
+      onInit: (el, pswp) => {
+        pswp.on('change', () => {
+          const source = pswp.currSlide?.data?.element as HTMLElement | undefined;
+          const hidden = source?.querySelector('.pswp-caption-content');
+          el.innerHTML = hidden ? hidden.innerHTML : '';
+        });
+      },
+    });
+  });
+
+  lightbox.init();
+</script>

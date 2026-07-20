@@ -1,0 +1,31 @@
+---
+const year = new Date().getFullYear();
+const socials = [
+  { href: 'https://www.linkedin.com/in/alastorc/', label: 'LinkedIn' },
+  { href: 'https://github.com/alastor-lee', label: 'GitHub' },
+];
+---
+
+<footer class="mt-16 border-t border-border bg-surface/40">
+  <div
+    class="mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 px-4 py-6 font-mono text-sm text-muted sm:flex-row"
+  >
+    <p>© {year} Alastor Curns</p>
+    <ul class="flex gap-4">
+      {
+        socials.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-colors hover:text-accent-soft"
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

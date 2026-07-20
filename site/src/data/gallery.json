@@ -1,0 +1,7 @@
+[
+  { "id": "photo-01", "src": "../images/gallery/IMG_5473.jpg", "alt": "lassen-rocks", "caption": "Mt. Lassen View", "order": 1 },
+  { "id": "photo-02", "src": "../images/gallery/IMG_7870.jpg", "alt": "reflections-tarn", "caption": "Reflecting waters in the Sierra, near Granite Dome", "order": 2 },
+  { "id": "photo-03", "src": "../images/gallery/IMG_5618.jpg", "alt": "canadian-rockies", "caption": "The Canadian Rockies near Banff", "order": 2 },
+  { "id": "photo-04", "src": "../images/gallery/IMG_7197.jpg", "alt": "stingray-underwater", "caption": "Stingray in Hawai'i", "order": 2 },
+  { "id": "photo-05", "src": "../images/gallery/IMG_7804.jpg", "alt": "lake-sierras", "caption": "Alpine lake in the Sierras", "order": 2 }
+]

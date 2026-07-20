@@ -1,0 +1,13 @@
+# build output
+dist/
+# generated types
+.astro/
+# deps
+node_modules/
+# deploy artifact (retired)
+web.tgz
+# resume PDF is copied from resume/alastorcurns-ic.pdf by `npm run sync:resume`
+public/alastorcurns.pdf
+# env
+.env
+.env.production

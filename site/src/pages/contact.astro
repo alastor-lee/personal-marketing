@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const email = 'alcdev@icloud.com';
+const links = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alastorc/', handle: '/in/alastorc' },
+  { label: 'GitHub', href: 'https://github.com/alastor-lee', handle: '@alastor-lee' },
+];
+---
+
+<Layout title="Contact" description="Get in touch with Alastor Curns.">
+  <header>
+    <h1 class="font-mono text-3xl font-semibold text-accent-soft">Contact</h1>
+    <p class="mt-4 max-w-2xl text-muted">
+      The best way to reach me is email or LinkedIn. Based in Oakland, CA.
+    </p>
+  </header>
+
+  <div class="mt-10 flex flex-col gap-4">
+    <!-- Email -->
+    <div
+      class="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface/40 p-5"
+    >
+      <div>
+        <p class="font-mono text-sm text-muted">Email</p>
+        <a href={`mailto:${email}`} class="font-mono text-lg text-accent-soft hover:underline">
+          {email}
+        </a>
+      </div>
+      <button
+        id="copy-email"
+        data-email={email}
+        class="rounded-md border border-border px-3 py-1.5 font-mono text-sm text-muted transition-colors hover:border-accent/40 hover:text-accent-soft"
+      >
+        Copy
+      </button>
+    </div>
+
+    <!-- Profiles -->
+    {
+      links.map(({ label, href, handle }) => (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface/40 p-5 transition-colors hover:border-accent/40"
+        >
+          <div>
+            <p class="font-mono text-sm text-muted">{label}</p>
+            <span class="font-mono text-lg text-accent-soft">{handle}</span>
+          </div>
+          <span class="font-mono text-sm text-muted">Open ↗</span>
+        </a>
+      ))
+    }
+  </div>
+</Layout>
+
+<script>
+  const btn = document.getElementById('copy-email') as HTMLButtonElement | null;
+  btn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(btn.dataset.email ?? '');
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => (btn.textContent = original), 1500);
+    } catch {
+      /* clipboard unavailable — the mailto link still works */
+    }
+  });
+</script>
