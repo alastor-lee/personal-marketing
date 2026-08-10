@@ -151,27 +151,28 @@
   \textbf{\Huge Alastor Curns} \\ \vspace{2pt}
   \faMobile \hspace{.5pt} \href{tel:16786285085}{678-628-5085}
   $|$
-  \href{mailto:alcdev@icloud.com}{alcdev@icloud.com}
+  \faPaperPlane \hspace{.5pt} \href{mailto:alcdev@icloud.com}{alcdev@icloud.com}
+  $|$
+  \faSitemap \hspace{.5pt} \href{https://alastor.dev}{alastor.dev}
   $|$
   \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/alastorc}{LinkedIn}
   $|$
   \faGithub \hspace{.5pt} \href{https://github.com/alastor-lee}{GitHub}
   $|$
-  \faShield \hspace{.5pt} Secret
-  $|$
   \faGlobe \hspace{.5pt} \href{https://maps.app.goo.gl/CdQMUuxD24zfLjYq7}{Oakland, CA}
   $|$
-  \faHistory \hspace{.5pt} 9 Years
+  \faHistory \hspace{.5pt} 10 Years
 \end{center}
 
 %--------- Introduction ---------
 \section{Introduction}
 \resumeSubHeadingListStart
 \item{
-            Software engineer with 9+ years building production systems, from junior engineer to lead and principal.
-            Architected and shipped the company's modern core products in a Node.js/TypeScript stack, with an emphasis on immutability, concurrency, and pragmatic design.
-            % awk sentence
-            Comfortable across the stack and in multiple languages (TypeScript, Python, Java, Scala), from optimizing a polling backend to designing a DSL or building complex data visualizations.
+            Software engineer with 10 years building production systems, from junior to senior engineer.
+            Architected and shipped the company's modern core products in a Node.js/TypeScript stack, 
+            with an emphasis on immutability, concurrency, and pragmatic design.
+            Comfortable across the stack, 
+            from optimizing a polling backend to designing and building complex data visualizations.
       }
 \resumeSubHeadingListEnd
 %--------- Experience -------------
@@ -179,58 +180,62 @@
 \vspace{2pt}
 \resumeSubHeadingListStart
 \resumeHeading{\normalsize{CodeMettle}}{\normalsize{Atlanta, GA}}
-\resumeSubheading{Principal Engineer}{2023 - Present}
+\textit{\small Network management and visualization software; \mytexttilde70 employees; primarily a DoD subcontractor.}
+\resumeSubheading{Senior Engineer}{2023 -- July 2026}
 \resumeItemListStart
 \resumeItem{
   \boldSubjectWithDesc{Technical Direction}{
-    Serve as the senior technical authority for a team of 5 engineers, setting architecture, standards, and the technical roadmap while staying hands-on in the core TypeScript codebase.
+    Served as the technical authority for a team of 5 (out of 15 total engineers), setting architecture, standards, and the roadmap while staying hands-on in core TypeScript and Go codebases.
   }
 }
 \resumeItem{
-  \boldSubjectWithDesc{AI Tooling}{
-    Drove adoption of AI-assisted, test-driven development (Claude Code, MCP servers, custom skills), halving ticket-to-PR time and raising test coverage from 60\% to 90\% while keeping delivery on pace. Moved code review and e2e testing into CI, and brought the full team onto AI tooling within 3 months.
+  \boldSubjectWithDesc{DevEx \& AI}{
+    Worked with fellow engineers to find the best ways to fit coding agents into the engineering workflow without compromising quality.
+    This included adoption of AI-assisted, test-driven development, reducing ticket-to-PR time and raising test coverage from 60\% to 90\% while keeping deliveries on pace. 
   }
 }
 \resumeItemListEnd
-\resumeSubheading{Lead Software Engineer}{2020 - 2023}
+\resumeSubheading{Software Engineer}{2020 -- 2023}
 \resumeItemListStart
 \resumeItem{
   \boldSubjectWithDesc{Modernization}{
-    Led the rewrite of the legacy Java/Play application into a modern Node.js/TypeScript backend and frontend, porting over every service and feature.
-  }
-}
-\resumeItem{
-  \boldSubjectWithDesc{Build}{
-    Architected and shipped full-stack features and contributed to roadmap and system design with product. Maintained a Scala/Java polling service. Designed complex graph structures, concurrency, and reusable patterns.
+    Led the rewrite of the legacy Java/Play application into Node.js/TypeScript, porting 7 services with 5 other engineers.
+    Cut build times from over an hour down to under 10 minutes.
+    Improved internal code standards and repository organization.
+    Staggered customer migrations, using a strangler-fig approach when possible.
   }
 }
 \resumeItem{
   \boldSubjectWithDesc{Mentor}{
     Authored onboarding documentation and mentored new engineers, cutting onboarding time from roughly one week to 1--3 days.
+    Onboarded 3 new developers and 8 interns in that time.
   }
 }
 \resumeItemListEnd
-\resumeSubheading{Systems Engineer}{2017-2020}
+\resumeSubheading{Systems Engineer}{2017 -- 2020}
 \resumeItemListStart
 \resumeItem{
-  \boldSubjectWithDesc{Fullstack Environment}{
+  \boldSubjectWithDesc{Full-Stack Environment}{
     Built services, backend logic, APIs, and visualizations across multiple stacks under tight deadlines.
     Bridged product, design, integrators, and end users as the engineering point of contact.
   }
 }
 \resumeItem{
   \boldSubjectWithDesc{Travel (\mytexttilde30\%)}{
-    Visited global customer sites to prototype, demonstrate features, and serve as the engineering subject-matter expert.
+    Over a 2-year span, spent 1--2 months at a time on-site at 4 overseas customer deployments to serve as the engineering subject-matter expert.
+    Prototyped mission-planning capabilities that became core features.
   }
 }
 \resumeItemListEnd
-\resumeSubheading{Project Engineer}{August 2016-2017}
+\resumeSubheading{Project Engineer}{August 2016 -- 2017}
 \resumeItemListStart
 \resumeItem{
-  \boldSubjectWithDesc{Project Lead}{Deployed production-ready systems to customers while leading a team of 3--5 developers.}
+  \boldSubjectWithDesc{Project Lead}{Deployed 2 production-ready systems to customers while leading a team of 2--3 developers.
+    Involved visiting satellite teleports and modem vendors to install and validate on-site.
+  }
 }
 \resumeItem{
-  \boldSubjectWithDesc{Hardware Integration}{Translated live satellite-infrastructure data into well-defined databases in Python.}
+  \boldSubjectWithDesc{Hardware Integration}{Translated live satellite-infrastructure data into well-defined databases using Python.}
 }
 \resumeItemListEnd
 \resumeSubHeadingListEnd
@@ -243,15 +248,13 @@
               Architected asynchronous subprocesses in a Node.js backend to ingest device data across protocols (SSH, SNMP, HTTP, streaming, serial, TCP, UDP, and WebSocket), scaling from 10--50 devices (hundreds of changes/sec) to \mytexttilde500 devices (thousands of changes/sec) in production.
             }
 
-            \boldSubjectWithDesc{Flows}{Developed a domain-specific language and event-driven architecture that let users define secure polls, data transformation/validation, and rules.}
+            \boldSubjectWithDesc{Flows}{Developed an external domain-specific language and event-driven architecture that let users define secure polls, data transformation/validation, and rules.}
 
             \boldSubjectWithDesc{Data Visualizations}{
-              Built geographical and logical network graphs (D3, MapBox, cytoscape.js, React Flow) rendering hundreds of nodes/edges across 4--5 datasources: tx/rx, alarms, OSPF/BGP changes, and geospatial. Wrote Grafana datasource plugins for Apache Solr and MongoDB.
+              Built geographical and logical network graphs (D3, Mapbox, cytoscape.js, React Flow) rendering hundreds of nodes/edges across 4--5 datasources: tx/rx, alarms, OSPF/BGP changes, and geospatial. Wrote Grafana datasource plugins for Apache Solr and MongoDB.
             }
 
-            \boldSubjectWithDesc{Network Infrastructure}{Created Cisco IOS and Juniper configurations and automation to manage the office network stack and stand up test scenarios for QA.}
-
-            \boldSubjectWithDesc{FIPS}{Built an optional FIPS-compliant mode enforcing BouncyCastle in Java and compiling Node and Go binaries against FIPS crypto chains.}
+            \boldSubjectWithDesc{FIPS}{Built an optional FIPS-compliant mode enforcing BouncyCastle in Java and compiling Node and Go binaries against FIPS crypto chains. Required for DoD Authority to Operate (ATO).}
       }
 \resumeSubHeadingListEnd
 
@@ -259,11 +262,11 @@
 \section{Skills}
 \resumeSubHeadingListStart
 \item{
-            \boldSubjectWithDesc{Languages \& Libraries}{TypeScript, Python, Java, Bash, C, HTML/CSS/JS, \href{https://github.com/Effect-TS/effect}{Effect-TS}, Express, Vite, Gulp}
+            \boldSubjectWithDesc{Languages \& Libraries}{TypeScript, Python, Java, Bash, C, HTML/CSS/JS, \href{https://github.com/Effect-TS/effect}{Effect-TS}, Go, Immutable.js}
 
-            \boldSubjectWithDesc{Technologies \& Frameworks}{Node.js, React, Jest, SNMP, Linux, OpenAPI, REST, MongoDB, MUI, Docker, Electron}
+            \boldSubjectWithDesc{Technologies \& Frameworks}{Node.js, JSON Schema, Express, React, Jest, RHEL, OpenAPI, MongoDB, SQL, Docker}
 
-            \boldSubjectWithDesc{Methods}{Git, Neovim, Agile, OOP, Functional/Immutable patterns, CI/CD, Claude Code, Snyk, Trivy, Obsidian, Monorepo}
+            \boldSubjectWithDesc{Methods}{npm workspaces, Nx, Git, Agile, GitLab CI, Claude Code, Snyk, Renovate, ESLint/Prettier}
       }
 \resumeSubHeadingListEnd
 

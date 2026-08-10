@@ -26,6 +26,7 @@ echo "▶ Deploying dist/ → ${SSH_TARGET}:${WEBROOT}"
 # Trailing slash on dist/ copies the *contents*, not the directory itself.
 rsync -avz -e 'ssh -p 5022' --delete \
   --human-readable \
+  --progress \
   dist/ "${SSH_TARGET}:${WEBROOT}/"
 
 echo "✓ Done."
